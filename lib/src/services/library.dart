@@ -1,0 +1,21 @@
+//contain all the import files
+export 'package:flutter/material.dart';
+export 'package:indi_chat_setu/src/widgets/constants.dart';
+export 'package:indi_chat_setu/src/screens/dashboard/home_pages/home.dart';
+export 'package:indi_chat_setu/src/screens/dashboard/home_pages/tabbar1.dart';
+export 'package:file_picker/file_picker.dart';
+export 'package:google_fonts/google_fonts.dart';
+export 'package:indi_chat_setu/src/widgets/custom.dart';
+export 'package:flutter_image_stack/flutter_image_stack.dart';
+export 'package:indi_chat_setu/src/screens/dashboard/quiz_pages/createQuiz.dart';
+export 'dart:async';
+export 'package:simple_circular_progress_bar/simple_circular_progress_bar.dart';
+export 'package:indi_chat_setu/src/screens/dashboard/quiz_pages/mentions.dart';
+export 'package:indi_chat_setu/src/screens/dashboard/quiz_pages/quizLogin.dart';
+export 'package:indi_chat_setu/src/screens/dashboard/quiz_pages/ansQues.dart';
+export 'package:indi_chat_setu/src/screens/dashboard/chat_pages/tabbar2.dart';
+export 'package:indi_chat_setu/src/screens/dashboard/chat_pages/tabbar3.dart';
+export 'package:indi_chat_setu/src/screens/dashboard/quiz_pages/quiz.dart';
+export 'package:indi_chat_setu/src/screens/dashboard/chat_pages/view_profile.dart';
+export 'package:indi_chat_setu/src/screens/dashboard/home_pages/appreciation.dart';
+export 'package:indi_chat_setu/src/screens/dashboard/home_pages/enquiry.dart';
