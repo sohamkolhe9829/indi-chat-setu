@@ -1,3 +1,5 @@
+import 'package:indi_chat_setu/src/screens/settings/notifications_setting.dart';
+import 'package:indi_chat_setu/src/screens/settings/setting_screen.dart';
 import 'package:indi_chat_setu/src/screens/welcome_pages/log_in.dart';
 import 'package:indi_chat_setu/src/screens/welcome_pages/otp.dart';
 import 'package:indi_chat_setu/src/screens/welcome_pages/person_type.dart';
@@ -22,6 +24,8 @@ class MyApp extends StatelessWidget {
         '/otp': (context) => OtpScreen(),
         '/personType': (context) => PersonType(),
         '/home': (context) => HomeScreen(),
+        '/setting': (context) => SettingScreen(),
+        '/notificationsSetting': (context) => NotificationsSetting(),
       },
       title: 'Flutter Demo',
       theme: ThemeData(

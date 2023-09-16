@@ -41,7 +41,9 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
             IconButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pushNamed(context, '/setting');
+              },
               icon: const Icon(
                 Icons.settings_outlined,
                 color: Colors.grey,
