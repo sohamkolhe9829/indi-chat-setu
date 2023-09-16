@@ -153,7 +153,8 @@ class OtpScreenState extends State<OtpScreen> {
                     ),
                   ),
                   CustomWidgets.sizedBox(height: height * 0.15),
-                  CustomWidgets.elevatedButton("Next", height, width)
+                  CustomWidgets.elevatedButton(
+                      context, "Next", height, width, "/personType"),
                 ],
               ),
             ],

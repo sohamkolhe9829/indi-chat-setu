@@ -46,7 +46,8 @@ class LoginScreenState extends State<LoginScreen> {
                       child:
                           CustomWidgets.textField("Enter your E-mail", _email)),
                   CustomWidgets.sizedBox(height: height * 0.25),
-                  CustomWidgets.elevatedButton("Next", height, width)
+                  CustomWidgets.elevatedButton(
+                      context, "Next", height, width, "/otp")
                 ],
               ),
             ],

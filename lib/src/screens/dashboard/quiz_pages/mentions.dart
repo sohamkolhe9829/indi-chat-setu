@@ -13,90 +13,77 @@ class _MentionsState extends State<Mentions> {
       "name": "Narendra Modi",
       "designation": "Prime Minister",
       "profile_photo": Constants.prof,
+      "notification": "Started following you",
       "time": "20:10",
     },
     {
       "name": "Narendra Modi",
       "designation": "Prime Minister",
       "profile_photo": Constants.prof,
+      "notification": "Started following you",
       "time": "20:10",
     },
     {
       "name": "Narendra Modi",
       "designation": "Prime Minister",
       "profile_photo": Constants.prof,
+      "notification": "Started following you",
       "time": "20:10",
     },
     {
       "name": "Narendra Modi",
       "designation": "Prime Minister",
       "profile_photo": Constants.prof,
+      "notification": "Started following you",
       "time": "20:10",
     },
     {
       "name": "Narendra Modi",
       "designation": "Prime Minister",
       "profile_photo": Constants.prof,
+      "notification": "Started following you",
       "time": "20:10",
     },
     {
       "name": "Narendra Modi",
       "designation": "Prime Minister",
       "profile_photo": Constants.prof,
+      "notification": "Started following you",
       "time": "20:10",
     },
     {
       "name": "Narendra Modi",
       "designation": "Prime Minister",
       "profile_photo": Constants.prof,
+      "notification": "Started following you",
       "time": "20:10",
     },
     {
       "name": "Narendra Modi",
       "designation": "Prime Minister",
       "profile_photo": Constants.prof,
+      "notification": "Started following you",
       "time": "20:10",
     },
     {
       "name": "Narendra Modi",
       "designation": "Prime Minister",
       "profile_photo": Constants.prof,
+      "notification": "Liked post",
       "time": "20:10",
     },
     {
       "name": "Narendra Modi",
       "designation": "Prime Minister",
       "profile_photo": Constants.prof,
+      "notification": "Started following you",
       "time": "20:10",
     },
     {
       "name": "Narendra Modi",
       "designation": "Prime Minister",
       "profile_photo": Constants.prof,
-      "time": "20:10",
-    },
-    {
-      "name": "Narendra Modi",
-      "designation": "Prime Minister",
-      "profile_photo": Constants.prof,
-      "time": "20:10",
-    },
-    {
-      "name": "Narendra Modi",
-      "designation": "Prime Minister",
-      "profile_photo": Constants.prof,
-      "time": "20:10",
-    },
-    {
-      "name": "Narendra Modi",
-      "designation": "Prime Minister",
-      "profile_photo": Constants.prof,
-      "time": "20:10",
-    },
-    {
-      "name": "Narendra Modi",
-      "designation": "Prime Minister",
-      "profile_photo": Constants.prof,
+      "notification": "Started following you",
       "time": "20:10",
     },
   ];
@@ -158,21 +145,21 @@ class _MentionsState extends State<Mentions> {
               ),
               SizedBox(
                 width: MediaQuery.of(context).size.width * 0.73,
-                child: Wrap(
-                  crossAxisAlignment: WrapCrossAlignment.end,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
                       followList[index]['name'],
                       overflow: TextOverflow.ellipsis,
                       style: TextStyle(
-                        fontSize: MediaQuery.of(context).size.width * 0.045,
-                      ),
+                          fontSize: MediaQuery.of(context).size.width * 0.045,
+                          fontWeight: FontWeight.bold),
                     ),
                     const SizedBox(
-                      width: 9,
+                      height: 9,
                     ),
                     Text(
-                      'started following you',
+                      followList[index]['notification'],
                       style: TextStyle(
                         fontSize: MediaQuery.of(context).size.width * 0.035,
                       ),

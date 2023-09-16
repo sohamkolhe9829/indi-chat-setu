@@ -1,3 +1,5 @@
+import 'package:indi_chat_setu/src/screens/welcome_pages/log_in.dart';
+import 'package:indi_chat_setu/src/screens/welcome_pages/sign_up.dart';
 import 'package:indi_chat_setu/src/services/library.dart';
 
 class WelcomeScreen extends StatefulWidget {
@@ -27,11 +29,26 @@ class WelcomeScreenState extends State<WelcomeScreen> {
                 children: [
                   Image.asset(Constants.welcomeLogo),
                   CustomWidgets.sizedBox(height: height * 0.2),
-                  CustomWidgets.elevatedThickButton(
-                      "Log-in", height, width, Color(0xFFF26727), Colors.white),
+                  InkWell(
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => LoginScreen(),
+                          ));
+                    },
+                    child: CustomWidgets.elevatedThickButton(
+                        context,
+                        "Log-in",
+                        height,
+                        width,
+                        Color(0xFFF26727),
+                        Colors.white,
+                        "/login"),
+                  ),
                   CustomWidgets.sizedBox(height: 30),
-                  CustomWidgets.elevatedThickButton(
-                      "Sign-up", height, width, Color(0xFFE6E6E6), Colors.black)
+                  CustomWidgets.elevatedThickButton(context, "Sign-up", height,
+                      width, Color(0xFFE6E6E6), Colors.black, "/signup")
                 ],
               ),
             ],

@@ -195,7 +195,7 @@ class _QATimerState extends State<QATimer> {
             width: height * 0.25, //18
             child: Card(
               shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(80),
+                borderRadius: BorderRadius.circular(100),
               ),
               color: Colors.white,
               elevation: 25,

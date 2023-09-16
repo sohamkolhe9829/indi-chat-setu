@@ -102,7 +102,8 @@ class PersonTypeState extends State<PersonType> {
                         ),
                       )),
                   CustomWidgets.sizedBox(height: height * 0.23),
-                  CustomWidgets.elevatedButton("Next", height, width)
+                  CustomWidgets.elevatedButton(
+                      context, "Next", height, width, "/home")
                 ],
               ),
             ],

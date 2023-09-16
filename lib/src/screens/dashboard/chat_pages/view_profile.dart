@@ -243,17 +243,24 @@ class ViewProfile extends StatelessWidget {
       body: SingleChildScrollView(
         child: SizedBox(
           height: mediaQueryHeight * 1.35,
+          width: mediaQueryWidth,
           child: Column(
             children: [
               Stack(
+                alignment: Alignment.topCenter,
+                fit: StackFit.passthrough,
                 children: [
-                  Image.asset(Constants.backgroundImg),
-                  CustomWidgets.sizedBox(height: 170), //170
+                  Center(child: Image.asset(Constants.backgroundImg)),
+                  CustomWidgets.sizedBox(height: 200), //170
                   Positioned(
                     bottom: 0,
                     right: mediaQueryHeight * 0.16, //120
                     // alignment: Alignment.bottomRight,
-                    child: Center(child: Image.asset(Constants.prof5)),
+                    child: Center(
+                      child: Image.asset(
+                        Constants.prof5,
+                      ),
+                    ),
                   ),
                 ],
               ),
@@ -263,14 +270,14 @@ class ViewProfile extends StatelessWidget {
                     CustomWidgets.sizedBox(height: mediaQueryHeight * 0.025),
                     Text(
                       "${singlePost[0]["name"]}",
-                      style:
-                          const TextStyle(fontWeight: FontWeight.bold, fontSize: 22),
+                      style: const TextStyle(
+                          fontWeight: FontWeight.bold, fontSize: 22),
                     ),
                     CustomWidgets.sizedBox(height: mediaQueryHeight * 0.01),
                     Text(
                       "Followers - 3.5M    Following - 12K",
                       style:
-                          TextStyle(color: Constants.greyColor2, fontSize: 12),
+                          TextStyle(color: Constants.greyColor2, fontSize: 15),
                     ),
                     CustomWidgets.sizedBox(height: mediaQueryHeight * 0.01),
                     Container(

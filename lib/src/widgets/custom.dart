@@ -90,12 +90,15 @@ class CustomWidgets {
     );
   }
 
-  static SizedBox elevatedButton(String txt, double height, double width) {
+  static SizedBox elevatedButton(
+      context, String txt, double height, double width, String routeName) {
     return SizedBox(
       height: height * 0.055,
       width: width * 0.8,
       child: ElevatedButton(
-        onPressed: () {},
+        onPressed: () {
+          Navigator.pushReplacementNamed(context, routeName);
+        },
         style: ButtonStyle(
           backgroundColor: MaterialStateProperty.all(Color(0xFFF26727)),
           elevation: MaterialStateProperty.all(10),
@@ -117,13 +120,15 @@ class CustomWidgets {
     );
   }
 
-  static SizedBox elevatedThickButton(
-      String txt, double height, double width, Color colr, Color colr1) {
+  static SizedBox elevatedThickButton(context, String txt, double height,
+      double width, Color colr, Color colr1, String routeName) {
     return SizedBox(
       height: height * 0.07,
       width: width * 0.7,
       child: ElevatedButton(
-        onPressed: () {},
+        onPressed: () {
+          Navigator.pushNamed(context, routeName);
+        },
         style: ButtonStyle(
           backgroundColor: MaterialStateProperty.all(colr),
           elevation: MaterialStateProperty.all(10),

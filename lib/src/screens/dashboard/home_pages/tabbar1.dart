@@ -242,6 +242,7 @@ class _TabBar1ScreenState extends State<TabBar1Screen> {
     return Container(
       padding: const EdgeInsets.fromLTRB(18, 0, 18, 10),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -252,7 +253,8 @@ class _TabBar1ScreenState extends State<TabBar1Screen> {
                   CustomWidgets.sizedBox(width: 4),
                   Text(
                     data["name"],
-                    style: const TextStyle(fontWeight: FontWeight.w600),
+                    style: const TextStyle(
+                        fontWeight: FontWeight.w600, fontSize: 17),
                   ),
                   CustomWidgets.sizedBox(width: 8),
                   Text("${data["days_posted"]}d"),
@@ -273,18 +275,18 @@ class _TabBar1ScreenState extends State<TabBar1Screen> {
                 children: [
                   GestureDetector(
                     onTap: () {},
-                    child: const Icon(Icons.favorite_border, size: 20),
+                    child: const Icon(Icons.favorite_border, size: 27),
                   ),
                   CustomWidgets.sizedBox(width: 8),
                   GestureDetector(
                     onTap: () {},
                     child: const Icon(Icons.maps_ugc_outlined,
-                        size: 20), //KK find icon without +
+                        size: 27), //KK find icon without +
                   ),
                   CustomWidgets.sizedBox(width: 8),
                   GestureDetector(
                     onTap: () {},
-                    child: const Icon(Icons.share_outlined, size: 20),
+                    child: const Icon(Icons.share_outlined, size: 27),
                   ),
                 ],
               ),
@@ -297,7 +299,7 @@ class _TabBar1ScreenState extends State<TabBar1Screen> {
                   CustomWidgets.sizedBox(width: 8),
                   GestureDetector(
                     onTap: () {},
-                    child: const Icon(Icons.block, size: 20),
+                    child: const Icon(Icons.block, size: 27),
                   ),
                 ],
               ),

@@ -131,7 +131,8 @@ class SignupScreenState extends State<SignupScreen> {
                       width: width * 0.8,
                       child: _dropDown(_nationality!, _nationalityOptions)),
                   CustomWidgets.sizedBox(height: height * 0.1),
-                  CustomWidgets.elevatedButton("Next", height, width)
+                  CustomWidgets.elevatedButton(
+                      context, "Next", height, width, "/otp")
                 ],
               ),
             ],
