@@ -8,6 +8,7 @@ class PersonType extends StatefulWidget {
 }
 
 class PersonTypeState extends State<PersonType> {
+  String personType = "none";
   @override
   Widget build(BuildContext context) {
     final width = MediaQuery.of(context).size.width;
@@ -23,84 +24,104 @@ class PersonTypeState extends State<PersonType> {
               Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text(
+                  const Text(
                     'Who Are You?',
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       color: Colors.black,
-                      fontSize: 40,
+                      fontSize: 30,
                       fontFamily: 'Helvetica',
                       fontWeight: FontWeight.bold,
                     ),
                   ),
                   CustomWidgets.sizedBox(height: 30),
-                  Container(
-                      decoration: BoxDecoration(
-                        border: Border.all(
-                          color: Color(0xFFF26727), // Border color
-                          width: 2.0, // Border width
+                  GestureDetector(
+                    onTap: () {
+                      setState(() {
+                        personType = 'politician';
+                      });
+                    },
+                    child: Container(
+                        decoration: BoxDecoration(
+                          color: personType == "politician"
+                              ? Color(0xFFF26727)
+                              : Colors.white,
+                          border: Border.all(
+                            color: const Color(0xFFF26727), // Border color
+                            width: 2.0, // Border width
+                          ),
+                          borderRadius: BorderRadius.circular(12.0),
                         ),
-                        borderRadius: BorderRadius.circular(12.0),
-                      ),
-                      width: width * 0.8,
-                      height: height * 0.07,
-                      child: Padding(
-                        padding: const EdgeInsets.all(10.0),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            Icon(Icons.alarm),
-                            SizedBox(
-                              width: 20,
-                            ),
-                            Text(
-                              "I'm Politician",
-                              textAlign: TextAlign.center,
-                              style: TextStyle(
-                                color: Colors.black,
-                                fontSize: 25,
-                                fontFamily: 'Helvetica',
-                                // fontWeight: FontWeight.bold,
+                        width: width * 0.8,
+                        height: height * 0.06,
+                        child: const Padding(
+                          padding: EdgeInsets.all(10.0),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              Icon(Icons.person),
+                              SizedBox(
+                                width: 20,
                               ),
-                            ),
-                          ],
-                        ),
-                      )),
+                              Text(
+                                "I'm Politician",
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 23,
+                                  fontFamily: 'Helvetica',
+                                  // fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ],
+                          ),
+                        )),
+                  ),
                   CustomWidgets.sizedBox(height: 30),
-                  Container(
-                      decoration: BoxDecoration(
-                        border: Border.all(
-                          color: Color(0xFFF26727), // Border color
-                          width: 2.0, // Border width
+                  GestureDetector(
+                    onTap: () {
+                      setState(() {
+                        personType = "citizen";
+                      });
+                    },
+                    child: Container(
+                        decoration: BoxDecoration(
+                          color: personType == "citizen"
+                              ? Color(0xFFF26727)
+                              : Colors.white,
+                          border: Border.all(
+                            color: const Color(0xFFF26727), // Border color
+                            width: 2.0, // Border width
+                          ),
+                          borderRadius: BorderRadius.circular(12.0),
                         ),
-                        borderRadius: BorderRadius.circular(12.0),
-                      ),
-                      width: width * 0.8,
-                      height: height * 0.07,
-                      child: Padding(
-                        padding: const EdgeInsets.all(10.0),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            Icon(Icons.alarm),
-                            SizedBox(
-                              width: 20,
-                            ),
-                            Text(
-                              "I'm Citizen",
-                              textAlign: TextAlign.center,
-                              style: TextStyle(
-                                color: Colors.black,
-                                fontSize: 25,
-                                fontFamily: 'Helvetica',
-                                // fontWeight: FontWeight.bold,
+                        width: width * 0.8,
+                        height: height * 0.06,
+                        child: const Padding(
+                          padding: EdgeInsets.all(10.0),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              Icon(Icons.person_outline_sharp),
+                              SizedBox(
+                                width: 20,
                               ),
-                            ),
-                          ],
-                        ),
-                      )),
+                              Text(
+                                "I'm Citizen",
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 23,
+                                  fontFamily: 'Helvetica',
+                                  // fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ],
+                          ),
+                        )),
+                  ),
                   CustomWidgets.sizedBox(height: height * 0.23),
                   CustomWidgets.elevatedButton(
                       context, "Next", height, width, "/home")

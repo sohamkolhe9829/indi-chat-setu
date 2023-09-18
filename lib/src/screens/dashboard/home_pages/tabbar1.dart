@@ -250,11 +250,11 @@ class _TabBar1ScreenState extends State<TabBar1Screen> {
               Row(
                 children: [
                   Image.asset(data["profile_image"]),
-                  CustomWidgets.sizedBox(width: 4),
+                  CustomWidgets.sizedBox(width: 10),
                   Text(
                     data["name"],
                     style: const TextStyle(
-                        fontWeight: FontWeight.w600, fontSize: 17),
+                        fontWeight: FontWeight.w500, fontSize: 16),
                   ),
                   CustomWidgets.sizedBox(width: 8),
                   Text("${data["days_posted"]}d"),
@@ -323,7 +323,8 @@ class _TabBar1ScreenState extends State<TabBar1Screen> {
                 CustomWidgets.sizedBox(width: 5),
                 Text(
                   "Liked by Satyam Soni & ${data["likes_number"]} others",
-                  style: const TextStyle(fontSize: 12),
+                  style: const TextStyle(
+                      fontSize: 13, fontWeight: FontWeight.w600),
                 ),
               ],
             ),
@@ -335,7 +336,7 @@ class _TabBar1ScreenState extends State<TabBar1Screen> {
               data["description"],
               maxLines: descTextShowFlag ? 8 : 2, //K check later
               overflow: TextOverflow.ellipsis,
-              textScaleFactor: 0.9,
+              textScaleFactor: 1.1,
               style: const TextStyle(
                 color: Colors.black54,
                 // fontSize: 13,
