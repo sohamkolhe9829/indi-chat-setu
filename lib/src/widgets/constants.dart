@@ -34,9 +34,10 @@ class Constants {
   static String profileImage4 = "assets/images/profile4.png";
   static String prof = "assets/images/prof.png";
   static String prof2 = "assets/images/prof2.png";
-  static String prof3 = "assets/images/prof3.png";
-  static String prof4 = "assets/images/prof4.png";
-  static String prof5 = "assets/images/prof5.png";
+  static String prof3 = "assets/images/prof3.jpg";
+  static String prof4 = "assets/images/prof4.jpg";
+  static String prof5 = "assets/images/prof5.jpg";
+  static String prof5Png = "assets/images/prof5.png";
   static String backgroundImg = "assets/images/backgroundImg.png";
   static String profs = "assets/images/profs.png";
   static String profs2 = "assets/images/profs2.png";

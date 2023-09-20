@@ -56,36 +56,42 @@ class CustomWidgets {
     );
   }
 
-  static TextField textOTPField(String labelText,
+  static Container textOTPField(String labelText,
       TextEditingController controller, BuildContext context) {
-    return TextField(
-      controller: controller,
-      textAlign: TextAlign.center,
-      textInputAction: TextInputAction.done,
-      textCapitalization: TextCapitalization.words,
-      keyboardType: TextInputType.number,
-      //autofocus: true,
-      // cursorColor: Colors.black,
+    return Container(
+      height: 50,
+      child: Column(
+        children: [
+          Expanded(
+            child: TextField(
+              controller: controller,
+              textAlign: TextAlign.center,
+              textInputAction: TextInputAction.done,
+              textCapitalization: TextCapitalization.words,
+              keyboardType: TextInputType.number,
+              //autofocus: true,
+              // cursorColor: Colors.black,
 
-      style: TextStyle(
-        color: Colors.white,
-        fontSize: 16,
-      ),
-      maxLength: 1,
-      onChanged: (_) =>
-          labelText == "1" ? null : FocusScope.of(context).nextFocus(),
-      decoration: InputDecoration(
-        counterText: '',
-        fillColor: Color(0xFFF26727),
-        filled: true,
-        focusedBorder: OutlineInputBorder(
-          borderSide: BorderSide(
-              color: Colors.transparent), // Set the color to transparent
-        ),
-        border: OutlineInputBorder(
-          borderSide:
-              BorderSide(width: 3, color: Color(0xFFF26727)), //<-- SEE HERE
-        ),
+              style: TextStyle(
+                color: Colors.black,
+                fontSize: 16,
+              ),
+              maxLength: 1,
+              onChanged: (_) =>
+                  labelText == "1" ? null : FocusScope.of(context).nextFocus(),
+              decoration: InputDecoration(
+                counterText: '',
+                filled: true,
+                border: InputBorder.none,
+              ),
+            ),
+          ),
+          Container(
+            height: 10,
+            width: double.infinity,
+            color: Color(0xFFF26727),
+          )
+        ],
       ),
     );
   }

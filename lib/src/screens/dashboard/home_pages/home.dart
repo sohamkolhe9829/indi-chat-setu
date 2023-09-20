@@ -15,42 +15,67 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,
+        leadingWidth: 0,
         elevation: 0,
-        leadingWidth: mediaQueryWidth * 0.4,
-        leading: Row(
-          children: [
-            IconButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const Mentions(),
-                  ),
-                );
-              },
-              icon: const Icon(
-                Icons.favorite_border,
-                color: Colors.grey,
-              ),
-            ),
-            IconButton(
-              onPressed: () {},
-              icon: const Icon(
-                Icons.search,
-                color: Colors.grey,
-              ),
-            ),
-            IconButton(
-              onPressed: () {
-                Navigator.pushNamed(context, '/setting');
-              },
-              icon: const Icon(
-                Icons.settings_outlined,
-                color: Colors.grey,
-              ),
-            ),
-          ],
+        title: Text(
+          "Indi-Chat-Setu",
+          style: TextStyle(
+            fontSize: 20,
+            fontWeight: FontWeight.bold,
+            color: Colors.black,
+          ),
         ),
+        actions: [
+          IconButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const Mentions(),
+                ),
+              );
+            },
+            icon: const Icon(
+              Icons.favorite_border,
+              color: Colors.grey,
+            ),
+          ),
+          IconButton(
+            onPressed: () {},
+            icon: const Icon(
+              Icons.search,
+              color: Colors.grey,
+            ),
+          ),
+          PopupMenuButton<int>(
+            icon: Icon(
+              Icons.more_vert,
+              color: Colors.grey,
+            ),
+            onSelected: (item) {
+              switch (item) {
+                case 0:
+                  break;
+                case 1:
+                  break;
+              }
+            },
+            itemBuilder: (context) => [
+              PopupMenuItem<int>(
+                value: 0,
+                onTap: () {
+                  Navigator.pushNamed(context, '/setting');
+                },
+                child: Text('Settings'),
+              ),
+              PopupMenuItem<int>(
+                value: 1,
+                onTap: () {},
+                child: Text('Logout'),
+              ),
+            ],
+          ),
+        ],
       ),
       body: DefaultTabController(
         length: 5,

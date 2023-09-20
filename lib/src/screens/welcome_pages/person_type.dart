@@ -25,7 +25,7 @@ class PersonTypeState extends State<PersonType> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   const Text(
-                    'Who Are You?',
+                    'Select',
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       color: Colors.black,
@@ -35,92 +35,122 @@ class PersonTypeState extends State<PersonType> {
                     ),
                   ),
                   CustomWidgets.sizedBox(height: 30),
-                  GestureDetector(
-                    onTap: () {
-                      setState(() {
-                        personType = 'politician';
-                      });
-                    },
-                    child: Container(
-                        decoration: BoxDecoration(
-                          color: personType == "politician"
-                              ? Color(0xFFF26727)
-                              : Colors.white,
-                          border: Border.all(
-                            color: const Color(0xFFF26727), // Border color
-                            width: 2.0, // Border width
-                          ),
-                          borderRadius: BorderRadius.circular(12.0),
-                        ),
-                        width: width * 0.8,
-                        height: height * 0.06,
-                        child: const Padding(
-                          padding: EdgeInsets.all(10.0),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: [
-                              Icon(Icons.person),
-                              SizedBox(
-                                width: 20,
-                              ),
-                              Text(
-                                "I'm Politician",
-                                textAlign: TextAlign.center,
-                                style: TextStyle(
-                                  color: Colors.black,
-                                  fontSize: 23,
-                                  fontFamily: 'Helvetica',
-                                  // fontWeight: FontWeight.bold,
+                  Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 5),
+                    child: Row(
+                      children: [
+                        GestureDetector(
+                          onTap: () {
+                            setState(() {
+                              personType = 'politician';
+                            });
+                          },
+                          child: Container(
+                              decoration: BoxDecoration(
+                                color: personType == "politician"
+                                    ? Color(0xFFF26727)
+                                    : Colors.white,
+                                border: Border.all(
+                                  color:
+                                      const Color(0xFFF26727), // Border color
+                                  width: 2.0, // Border width
                                 ),
+                                borderRadius: BorderRadius.circular(12.0),
                               ),
-                            ],
-                          ),
-                        )),
-                  ),
-                  CustomWidgets.sizedBox(height: 30),
-                  GestureDetector(
-                    onTap: () {
-                      setState(() {
-                        personType = "citizen";
-                      });
-                    },
-                    child: Container(
-                        decoration: BoxDecoration(
-                          color: personType == "citizen"
-                              ? Color(0xFFF26727)
-                              : Colors.white,
-                          border: Border.all(
-                            color: const Color(0xFFF26727), // Border color
-                            width: 2.0, // Border width
-                          ),
-                          borderRadius: BorderRadius.circular(12.0),
-                        ),
-                        width: width * 0.8,
-                        height: height * 0.06,
-                        child: const Padding(
-                          padding: EdgeInsets.all(10.0),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: [
-                              Icon(Icons.person_outline_sharp),
-                              SizedBox(
-                                width: 20,
-                              ),
-                              Text(
-                                "I'm Citizen",
-                                textAlign: TextAlign.center,
-                                style: TextStyle(
-                                  color: Colors.black,
-                                  fontSize: 23,
-                                  fontFamily: 'Helvetica',
-                                  // fontWeight: FontWeight.bold,
+                              width: MediaQuery.of(context).size.width / 3 - 10,
+                              height: height * 0.06,
+                              child: const Padding(
+                                padding: EdgeInsets.all(10.0),
+                                child: FittedBox(
+                                  child: Text(
+                                    "I'm Politician",
+                                    textAlign: TextAlign.center,
+                                    style: TextStyle(
+                                      color: Colors.black,
+                                      fontSize: 23,
+                                      fontFamily: 'Helvetica',
+                                      // fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
                                 ),
+                              )),
+                        ),
+                        CustomWidgets.sizedBox(width: 10),
+                        GestureDetector(
+                          onTap: () {
+                            setState(() {
+                              personType = "other";
+                            });
+                          },
+                          child: Container(
+                              decoration: BoxDecoration(
+                                color: personType == "other"
+                                    ? Color(0xFFF26727)
+                                    : Colors.white,
+                                border: Border.all(
+                                  color:
+                                      const Color(0xFFF26727), // Border color
+                                  width: 2.0, // Border width
+                                ),
+                                borderRadius: BorderRadius.circular(12.0),
                               ),
-                            ],
-                          ),
-                        )),
+                              width: MediaQuery.of(context).size.width / 3 - 10,
+                              height: height * 0.06,
+                              child: const Padding(
+                                padding: EdgeInsets.all(10.0),
+                                child: FittedBox(
+                                  child: Text(
+                                    "I'm Citizen",
+                                    textAlign: TextAlign.center,
+                                    style: TextStyle(
+                                      color: Colors.black,
+                                      fontSize: 16,
+                                      fontFamily: 'Helvetica',
+                                      // fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                ),
+                              )),
+                        ),
+                        CustomWidgets.sizedBox(width: 10),
+                        GestureDetector(
+                          onTap: () {
+                            setState(() {
+                              personType = "citizen";
+                            });
+                          },
+                          child: Container(
+                              decoration: BoxDecoration(
+                                color: personType == "citizen"
+                                    ? Color(0xFFF26727)
+                                    : Colors.white,
+                                border: Border.all(
+                                  color:
+                                      const Color(0xFFF26727), // Border color
+                                  width: 2.0, // Border width
+                                ),
+                                borderRadius: BorderRadius.circular(12.0),
+                              ),
+                              width: MediaQuery.of(context).size.width / 3 - 20,
+                              height: height * 0.06,
+                              child: const Padding(
+                                padding: EdgeInsets.all(10.0),
+                                child: FittedBox(
+                                  child: Text(
+                                    "others",
+                                    textAlign: TextAlign.center,
+                                    style: TextStyle(
+                                      color: Colors.black,
+                                      fontSize: 16,
+                                      fontFamily: 'Helvetica',
+                                      // fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                ),
+                              )),
+                        ),
+                      ],
+                    ),
                   ),
                   CustomWidgets.sizedBox(height: height * 0.23),
                   CustomWidgets.elevatedButton(

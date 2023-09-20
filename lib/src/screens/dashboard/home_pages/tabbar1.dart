@@ -232,6 +232,7 @@ class _TabBar1ScreenState extends State<TabBar1Screen> {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
+        shrinkWrap: true,
         itemCount: singlePost.length,
         itemBuilder: (context, index) {
           return postTile(singlePost[index], index);

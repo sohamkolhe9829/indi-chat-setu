@@ -1,8 +1,13 @@
 import 'package:indi_chat_setu/src/services/library.dart';
 
-class ViewProfile extends StatelessWidget {
+class ViewProfile extends StatefulWidget {
   ViewProfile({super.key});
 
+  @override
+  State<ViewProfile> createState() => _ViewProfileState();
+}
+
+class _ViewProfileState extends State<ViewProfile> {
   List<dynamic> singlePost = [
     {
       "name": "Narendra Modi",
@@ -257,8 +262,19 @@ class ViewProfile extends StatelessWidget {
                     right: mediaQueryHeight * 0.16, //120
                     // alignment: Alignment.bottomRight,
                     child: Center(
-                      child: Image.asset(
-                        Constants.prof5,
+                      child: CircleAvatar(
+                        radius: 60,
+                        child: Container(
+                          height: double.infinity,
+                          width: double.infinity,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(50),
+                          ),
+                          child: Image.asset(
+                            Constants.prof5Png,
+                            fit: BoxFit.contain,
+                          ),
+                        ),
                       ),
                     ),
                   ),
@@ -352,8 +368,16 @@ class ViewProfile extends StatelessWidget {
                       ),
                     ),
                     CustomWidgets.sizedBox(height: mediaQueryHeight * 0.02),
-                    const Expanded(
-                      child: TabBar1Screen(),
+                    Expanded(
+                      child: LayoutBuilder(builder: (context, constraints) {
+                        return ListView.builder(
+                            physics: BouncingScrollPhysics(),
+                            shrinkWrap: true,
+                            itemCount: singlePost.length,
+                            itemBuilder: (context, index) {
+                              return postTile(singlePost[index], index);
+                            });
+                      }),
                     )
                   ],
                 ),
@@ -361,6 +385,142 @@ class ViewProfile extends StatelessWidget {
             ],
           ),
         ),
+      ),
+    );
+  }
+
+  Widget postTile(Map<String, dynamic> data, int index) {
+    return Container(
+      padding: const EdgeInsets.fromLTRB(18, 0, 18, 10),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Row(
+                children: [
+                  Image.asset(data["profile_image"]),
+                  CustomWidgets.sizedBox(width: 10),
+                  Text(
+                    data["name"],
+                    style: const TextStyle(
+                        fontWeight: FontWeight.w500, fontSize: 16),
+                  ),
+                  CustomWidgets.sizedBox(width: 8),
+                  Text("${data["days_posted"]}d"),
+                ],
+              ),
+              IconButton(
+                onPressed: () {},
+                icon: const Icon(Icons.more_vert),
+              )
+            ],
+          ),
+          Image.asset(data["post_image"]),
+          CustomWidgets.sizedBox(height: 8),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Row(
+                children: [
+                  GestureDetector(
+                    onTap: () {},
+                    child: const Icon(Icons.favorite_border, size: 27),
+                  ),
+                  CustomWidgets.sizedBox(width: 8),
+                  GestureDetector(
+                    onTap: () {},
+                    child: const Icon(Icons.maps_ugc_outlined,
+                        size: 27), //KK find icon without +
+                  ),
+                  CustomWidgets.sizedBox(width: 8),
+                  GestureDetector(
+                    onTap: () {},
+                    child: const Icon(Icons.share_outlined, size: 27),
+                  ),
+                ],
+              ),
+              Row(
+                children: [
+                  GestureDetector(
+                    onTap: () {},
+                    child: const Icon(Icons.edit_note),
+                  ),
+                  CustomWidgets.sizedBox(width: 8),
+                  GestureDetector(
+                    onTap: () {},
+                    child: const Icon(Icons.block, size: 27),
+                  ),
+                ],
+              ),
+            ],
+          ),
+          CustomWidgets.sizedBox(height: 8),
+          Align(
+            alignment: Alignment.centerLeft,
+            child: Row(
+              children: [
+                FlutterImageStack(
+                  imageSource: ImageSource.asset,
+                  imageList: [
+                    Constants.profileImage,
+                    Constants.profileImage2,
+                    Constants.profileImage3,
+                  ],
+                  totalCount: 3,
+                  // itemCount: 3,
+                ),
+                CustomWidgets.sizedBox(width: 5),
+                Text(
+                  "Liked by Satyam Soni & ${data["likes_number"]} others",
+                  style: const TextStyle(
+                      fontSize: 13, fontWeight: FontWeight.w600),
+                ),
+              ],
+            ),
+          ),
+          CustomWidgets.sizedBox(height: 5),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 5.0),
+            child: Text(
+              data["description"],
+              maxLines: descTextShowFlag ? 8 : 2, //K check later
+              overflow: TextOverflow.ellipsis,
+              textScaleFactor: 1.1,
+              style: const TextStyle(
+                color: Colors.black54,
+                // fontSize: 13,
+              ),
+            ),
+          ),
+          InkWell(
+            onTap: () {
+              setState(() {
+                descTextShowFlag = !descTextShowFlag;
+              });
+            },
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: <Widget>[
+                descTextShowFlag
+                    ? const Text(
+                        "show less",
+                        style: TextStyle(color: Colors.black87, fontSize: 13),
+                      )
+                    : const Text(
+                        "...show more",
+                        style: TextStyle(color: Colors.black87, fontSize: 13),
+                      )
+              ],
+            ),
+          ),
+          CustomWidgets.sizedBox(height: 4),
+          const Divider(
+            thickness: 1,
+            color: Colors.black54,
+          ),
+        ],
       ),
     );
   }
