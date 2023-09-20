@@ -82,14 +82,18 @@ class CustomWidgets {
               decoration: InputDecoration(
                 counterText: '',
                 filled: true,
+                fillColor: Theme.of(context).scaffoldBackgroundColor,
                 border: InputBorder.none,
               ),
             ),
           ),
           Container(
-            height: 10,
+            height: 8,
             width: double.infinity,
-            color: Color(0xFFF26727),
+            decoration: BoxDecoration(
+              color: Color(0xFFF26727),
+              borderRadius: BorderRadius.circular(10),
+            ),
           )
         ],
       ),

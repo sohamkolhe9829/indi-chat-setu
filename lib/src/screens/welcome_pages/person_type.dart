@@ -63,9 +63,10 @@ class PersonTypeState extends State<PersonType> {
                                 padding: EdgeInsets.all(10.0),
                                 child: FittedBox(
                                   child: Text(
-                                    "I'm Politician",
+                                    "Politician",
                                     textAlign: TextAlign.center,
                                     style: TextStyle(
+                                      fontWeight: FontWeight.w500,
                                       color: Colors.black,
                                       fontSize: 23,
                                       fontFamily: 'Helvetica',
@@ -100,11 +101,12 @@ class PersonTypeState extends State<PersonType> {
                                 padding: EdgeInsets.all(10.0),
                                 child: FittedBox(
                                   child: Text(
-                                    "I'm Citizen",
+                                    "Citizen",
                                     textAlign: TextAlign.center,
                                     style: TextStyle(
                                       color: Colors.black,
                                       fontSize: 16,
+                                      fontWeight: FontWeight.w500,
                                       fontFamily: 'Helvetica',
                                       // fontWeight: FontWeight.bold,
                                     ),
@@ -137,9 +139,10 @@ class PersonTypeState extends State<PersonType> {
                                 padding: EdgeInsets.all(10.0),
                                 child: FittedBox(
                                   child: Text(
-                                    "others",
+                                    "Others",
                                     textAlign: TextAlign.center,
                                     style: TextStyle(
+                                      fontWeight: FontWeight.w500,
                                       color: Colors.black,
                                       fontSize: 16,
                                       fontFamily: 'Helvetica',

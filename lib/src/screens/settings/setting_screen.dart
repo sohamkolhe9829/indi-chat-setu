@@ -32,7 +32,6 @@ class SettingScreen extends StatelessWidget {
           child: Column(
             children: [
               Card(
-                elevation: 10,
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Row(
